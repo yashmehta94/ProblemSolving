@@ -1,0 +1,11 @@
+# A paragraph which contained some dates in format DD-MM-YYYY, find number of distinct years in the paragraph
+# https://www.geeksforgeeks.org/find-total-number-of-distinct-years-from-a-string/
+# Time/Space - O(n), O(n)
+import re
+
+txt = "Some random words with date 12-01-1990 and some more words with date 12-12-2017 and again some random words with same date 12-05-1990"
+
+x = re.findall("\d\d-\d\d-\d\d\d\d", txt)
+newlist = [y.split("-")[2] for y in x]
+newlist = list(set(newlist))
+print(newlist)
